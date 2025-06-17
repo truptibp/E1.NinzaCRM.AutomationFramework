@@ -6,15 +6,16 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class CreateCampaignTest {
 	
   @Test
-  public void tc_01_createCampaignTest() 
+  public void tc_01_createCampaignTest() throws InterruptedException 
   {
 	  //launch the browser
-	  WebDriver driver =new EdgeDriver();
+	  WebDriver driver =new ChromeDriver();
 	  driver.manage().window().maximize();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	  
@@ -33,6 +34,10 @@ public class CreateCampaignTest {
 	  driver.findElement(By.name("campaignName")).sendKeys("Media20");
 	  driver.findElement(By.name("targetSize")).sendKeys("5");
 	  driver.findElement(By.xpath("//button[.='Create Campaign']")).click();
+	  
+	  Thread.sleep(5000);
+	  
+	  driver.quit();
 	  
 	  
   }
