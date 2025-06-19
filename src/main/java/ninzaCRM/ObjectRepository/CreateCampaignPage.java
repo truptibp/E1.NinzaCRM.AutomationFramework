@@ -36,7 +36,7 @@ public class CreateCampaignPage
 	
 	//BusinessLibrary
 	/**
-	 * This method is used to Create a new Campaign.
+	 * This method is used to Create a new Campaign with mandatory fields.
 	 * 
 	 * @param CampaignName
 	 * @param TargetSize
@@ -48,7 +48,7 @@ public class CreateCampaignPage
 		createCampaignBtn.click();
 	}
 	
-	
+	//optional with all fields
 	public void createCampaignWithAllFields(String CampaignName,String TargetSize)
 	{
 		campaignNametext.sendKeys(CampaignName);

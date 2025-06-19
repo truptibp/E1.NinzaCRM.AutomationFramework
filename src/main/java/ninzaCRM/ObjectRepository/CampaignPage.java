@@ -3,10 +3,13 @@ package ninzaCRM.ObjectRepository;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CampaignPage
+import ninzaCRM.GenericUtilities.SeleniumUtility;
+
+public class CampaignPage extends SeleniumUtility
 {
 	@FindBy(xpath="//span[.='Create Campaign']")
 	private WebElement createCampaignBtn;
@@ -15,25 +18,53 @@ public class CampaignPage
 		return createCampaignBtn;
 	}
 	
+	//click on User icon
+	@FindBy(xpath="//div[@class='user-icon']")
+	private WebElement userIcon;
+	
+	//click on campaigns link
+	@FindBy(linkText="Campaigns")
+	private WebElement campaignsLnk;
+	
 	//Click on Contact link
 	@FindBy(linkText="Contacts")
 	private WebElement contactsLnk;
 	
+	//click on Leads link
 	@FindBy(linkText="Leads")
 	private WebElement leadsLnk;
 	
+	//click on opportunities link
 	@FindBy(linkText="Opportunities")
 	private WebElement opportunitiesLnk;
 	
+	//click on products link
 	@FindBy(linkText="Products")
 	private WebElement productsLnk;
 	
+	//click on quotes
 	@FindBy(linkText="Quotes")
 	private WebElement quotesLnk;
 	
+	//click on purchase order
 	@FindBy(linkText="Purchase Order")
 	private WebElement purchaseOrderLnk;	
 	
+	//click on LogOut link
+	@FindBy(xpath="//div[@class='dropdown-item logout']")
+	private WebElement logOutLnk;
+
+	public WebElement getLogOutLnk() {
+		return logOutLnk;
+	}
+
+	public WebElement getUserIcon() {
+		return userIcon;
+	}
+	
+	public WebElement getCampaignsLnk() {
+		return campaignsLnk;
+	}
 
 	public WebElement getContactsLnk() {
 		return contactsLnk;
@@ -64,7 +95,7 @@ public class CampaignPage
 		return purchaseOrderLnk;
 	}
 
-
+	//Constructor
 	public CampaignPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -103,5 +134,17 @@ public class CampaignPage
 	public void clickOnPurchaseOrderLnk()
 	{
 		purchaseOrderLnk.click();
+	}
+	
+	/**
+	 * This method is used to logout of the application.
+	 * @param driver
+	 * @throws InterruptedException
+	 */
+	public void logoutOfApp(WebDriver driver) throws InterruptedException
+	{		
+		 mouseOverAction(driver, userIcon);
+		 Thread.sleep(4000);
+		 logOutLnk.click();
 	}
 }

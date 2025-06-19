@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class CreateCampaignTest {
@@ -84,15 +85,22 @@ public class CreateCampaignTest {
 	 //transfer the control back to mainwindow
 	 driver.switchTo().window(MainwinId);
 	 
-	// Thread.sleep(8000);
-	 
 	 //click on "Create Contact" button
 	 driver.findElement(By.xpath("//button[.='Create Contact']")).click();
+	
 	 System.out.println("Contact created successfully");
-	   
-	 driver.findElement(By.xpath("//div[@class='user-icon']")).click();
+	 
+	 Thread.sleep(8000);
+	 
+	 //Logout of the application
+	 WebElement ele = driver.findElement(By.xpath("//div[@class='user-icon']"));
+	 Actions a=new Actions(driver);
+	 a.moveToElement(ele).perform();
+	 
+	 Thread.sleep(3000);
 	 driver.findElement(By.xpath("//div[@class='dropdown-item logout']")).click();
-	// driver.quit();
+	 System.out.println("Logout of the application successfull.");
+	
 	  
 	  
   }
