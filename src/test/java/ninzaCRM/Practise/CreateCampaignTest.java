@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CreateCampaignTest {
 	
   @Test
-  public void tc_01_createCampaignTest() throws InterruptedException 
+  public void tc_01_createCampaign_ContactTest() throws InterruptedException 
   {
 	  //launch the browser
 	  WebDriver driver = new EdgeDriver();

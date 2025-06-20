@@ -29,7 +29,7 @@ public class CreateCampaignPage
 		return createCampaignBtn;
 	}
 
-	public void CreateCampaignPage(WebDriver driver)
+	public CreateCampaignPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

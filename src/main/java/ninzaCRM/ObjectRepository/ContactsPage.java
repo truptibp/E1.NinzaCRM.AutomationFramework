@@ -27,7 +27,7 @@ public class ContactsPage
 	}
 
 	//constructor
-	public void ContactsPage(WebDriver driver)
+	public ContactsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

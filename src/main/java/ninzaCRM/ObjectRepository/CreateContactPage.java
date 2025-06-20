@@ -71,7 +71,7 @@ public class CreateContactPage extends SeleniumUtility
 	}
 	
 	//Constructor
-	public void CreateContactPage(WebDriver driver)
+	public CreateContactPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -101,9 +101,7 @@ public class CreateContactPage extends SeleniumUtility
 		
 		Thread.sleep(4000);
 		
-		createContactBtn.click();
-		
-		
+		createContactBtn.click();		
 		
 	}
 
