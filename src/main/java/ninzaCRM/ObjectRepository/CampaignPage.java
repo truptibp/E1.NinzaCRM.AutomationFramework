@@ -144,7 +144,7 @@ public class CampaignPage extends SeleniumUtility
 	public void logoutOfApp(WebDriver driver) throws InterruptedException
 	{		
 		 mouseOverAction(driver, userIcon);
-		 Thread.sleep(4000);
+		 Thread.sleep(5000);
 		 logOutLnk.click();
 	}
 }

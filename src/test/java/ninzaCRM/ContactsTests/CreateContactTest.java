@@ -3,6 +3,7 @@ package ninzaCRM.ContactsTests;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import ninzaCRM.GenericUtilities.BaseClass;
@@ -11,9 +12,10 @@ import ninzaCRM.ObjectRepository.ContactsPage;
 import ninzaCRM.ObjectRepository.CreateCampaignPage;
 import ninzaCRM.ObjectRepository.CreateContactPage;
 
+@Listeners(ninzaCRM.GenericUtilities.ListenersImplementation.class)
 public class CreateContactTest extends BaseClass
 {
-	@Test
+	@Test(groups="SmokeSuite")
 	public void tc_01_createContactTest() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		//Read the data from excel file
@@ -26,6 +28,8 @@ public class CreateContactTest extends BaseClass
 		String TITLE=eUtil.readDataFromExcel("Integration", 4, 6);
 		String MOBILE=eUtil.readDataFromExcel("Integration", 4, 4);
 		
+		Thread.sleep(7000);
+		
 		//click on +Create Campaign button
 		CampaignPage cp=new CampaignPage(driver);
 		cp.clickOnCreateCampaignBtn();
@@ -34,7 +38,7 @@ public class CreateContactTest extends BaseClass
 		CreateCampaignPage ccp=new CreateCampaignPage(driver);
 		ccp.createCampaign(CAMPAIGNNAME, TARGETSIZE);
 		
-		Thread.sleep(7000);
+		Thread.sleep(8000);
 		
 		//click on Contacts link
 		cp.clickOnContactsLnk();
@@ -50,7 +54,8 @@ public class CreateContactTest extends BaseClass
 		//Validate for Contact
 		conp.captureContactNamesAndCompare(CONTACTNAME);
 		System.out.println(CONTACTNAME);
-		Thread.sleep(7000);
+		
+		Thread.sleep(6000);
 		
 		
 		

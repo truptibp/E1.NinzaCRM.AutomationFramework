@@ -80,6 +80,8 @@ public class CreateCampaignTest {
 	 s.selectByVisibleText("Campaign Name");
 	 
 	 driver.findElement(By.id("search-input")).sendKeys("sales1234");
+	 
+	 //select button in table
 	 driver.findElement(By.xpath("//td[.='sales1234']/following-sibling::td/child::button")).click();
 	 
 	 //transfer the control back to mainwindow
@@ -101,6 +103,7 @@ public class CreateCampaignTest {
 	 driver.findElement(By.xpath("//div[@class='dropdown-item logout']")).click();
 	 System.out.println("Logout of the application successfull.");
 	
+	 
 	  
 	  
   }

@@ -30,7 +30,7 @@ public class CreateContactPage extends SeleniumUtility
 	@FindBy(id="search-criteria")
 	private WebElement selDropDown;
 	
-	//search campaign name 
+	//search by campaign name 
 	@FindBy(id="search-input")
 	private WebElement searchCampaignText;
 	
@@ -86,14 +86,19 @@ public class CreateContactPage extends SeleniumUtility
 		
 		selectCampaignBtn.click();
 		
+		//transfer window control from parent to child (campaign window)
 		switchToWindow(driver,"Campaign");
 		Thread.sleep(3000);
 		
+		//select Campaign name using Campaign by Name drop down
 		handleDropdown("Campaign Name", selDropDown);
+		
+		//enter campaign name in search text text box
 		searchCampaignText.sendKeys(campaignName);
 		
 		Thread.sleep(3000);
 		
+		//select campaign from the table using "select" button in the table row
 		driver.findElement(By.xpath("//td[.='"+campaignName+"']/following-sibling::td/child::button")).click();
 		Thread.sleep(3000);
 		

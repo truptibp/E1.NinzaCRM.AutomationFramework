@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+
+<listeners>
+<listener class-name="ninzaCRM.GenericUtilities.ListenersImplementation"></listener>
+</listeners>
+
   <test thread-count="5" name="Test">
    <classes>
-    <class name=""></class>
+    <class name="ninzaCRM.ContactsTests.CreateContactTest"/>
+     <class name="ninzaCRM.LeadsTests.CreateLeadTest"/>
+      <class name="ninzaCRM.OpportunitiesTests.CreateOpportunityTest"/>   
    </classes>
   </test> <!-- Test -->
+  
 </suite> <!-- Suite -->
