@@ -3,6 +3,7 @@ package ninzaCRM.OpportunitiesTests;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -80,6 +81,7 @@ public class CreateOpportunityTest extends BaseClass
 		System.out.println(OPPORTUNITYNAME);
 		
 		Thread.sleep(8000);	
+		
 		
 	}
 }

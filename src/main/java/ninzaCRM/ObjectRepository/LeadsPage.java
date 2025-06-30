@@ -37,14 +37,14 @@ public class LeadsPage
 		createLeadBtn.click();
 	}
 	
-	
-	public void captureContactNamesAndCompare(String RequiredContactName)
+	//Validation
+	public void captureLeadNamesAndCompare(String RequiredLeadName)
 	{
 		for (WebElement ele:leadNamesText) {
-			String ContactName = ele.getText();
-			if(ContactName.equals(RequiredContactName))
+			String LeadName = ele.getText();
+			if(LeadName.equals(RequiredLeadName))
 			{
-				System.out.println("Leads Created successfully");
+				System.out.println("Lead Created successfully");
 				break;
 			}
 			

@@ -126,6 +126,11 @@ public class CampaignPage extends SeleniumUtility
 		opportunitiesLnk.click();
 	}
 	
+	public void clickOnProductsLnk()
+	{
+		productsLnk.click();
+	}
+	
 	public void clickOnQuotesLnk()
 	{
 		quotesLnk.click();

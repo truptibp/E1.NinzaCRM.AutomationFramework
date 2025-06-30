@@ -54,7 +54,7 @@ public class CreateLeadTest extends BaseClass
 		clp.createLeadWithCampaign(driver, CAMPAIGNNAME, LEADNAME, COMPANY, LEADSOURCE, INDUSTRY, PHONE, LEADSTATUS,RATING);
 		
 		//Validate for Contact
-		lp.captureContactNamesAndCompare(LEADNAME);
+		lp.captureLeadNamesAndCompare(LEADNAME);
 		System.out.println(LEADNAME);
 				
 		Thread.sleep(8000);
